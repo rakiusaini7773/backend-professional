@@ -15,6 +15,14 @@ app.use(express.static("public"));  //way to serve static files, such as images,
 
 app.use(cookieParser()); //Parses the cookie data to extract individual values such as the cookie name, value, and expiration date.
 
+//routes import
+import userRouter from './routes/user.routes.js'
+
+//routes declaration
+
+app.use("/api/v1/users",userRouter)
+
+// http://localhost:8000/api/v1/user/register
 
 
 export {app};
